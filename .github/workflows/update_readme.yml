@@ -21,9 +21,9 @@ jobs:
         sdk: 'stable'
 
     - name: Run script
-      run: dart path/to/your_script.dart
+      run: dart .github/scripts/update_readme.dart
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
     - name: Commit and push changes
       run: |
@@ -33,4 +33,4 @@ jobs:
         git commit -m 'Update README'
         git push
       env:
-        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
